@@ -34,8 +34,9 @@ module.exports = gulp.task('modules', function() {
         buffer: false,
         debug: true
       }))
-      .pipe(uglify())
+      // .pipe(uglify())
       .pipe(rename(path.modules.rename))
+      .pipe(console.log('Rebuilt modules'))
 
       // dest
       .pipe(gulp.dest(path.modules.dest));
