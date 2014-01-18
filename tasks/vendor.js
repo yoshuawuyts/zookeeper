@@ -4,7 +4,7 @@
  * Module dependencies
  */
 
-var path = require('../config.json');
+var path = require('./config.json');
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 

@@ -4,14 +4,14 @@
  * Module dependencies
  */
 
-var path = require('../config.json');
+var path = require('./config.json');
 var gulp = require('gulp');
 var watch = require('gulp-watch');
 var plumber = require('gulp-plumber');
 var grep = require('gulp-grep-stream');
 var browserify = require('gulp-browserify');
 var uglify = require('gulp-uglify');
-var rename = require('gulp-rename');
+var rename = require('gulp-rename');  
 
 var debug = require('gulp-debug');
 
@@ -23,23 +23,18 @@ var debug = require('gulp-debug');
 
 module.exports = gulp.task('modules', function() {
 
-  gulp.watch([
-    path.modules.src
-  ], function(event) {
+  gulp.src(path.modules.index)
 
-    gulp.src(path.modules.index)
+    // apply transformations
+    .pipe(browserify({
+      buffer: false,
+      debug: true
+    }))
 
-      // apply transformations
-      .pipe(browserify({
-        buffer: false,
-        debug: true
-      }))
-      // .pipe(uglify())
-      .pipe(rename(path.modules.rename))
-      .pipe(console.log('Rebuilt modules'))
+    // .pipe(uglify())
+    .pipe(rename(path.modules.rename))
 
-      // dest
-      .pipe(gulp.dest(path.modules.dest));
-  });
+    // dest
+    .pipe(gulp.dest(path.modules.dest));
 
 });
