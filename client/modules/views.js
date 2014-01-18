@@ -1,6 +1,29 @@
+/**
+ * Module dependencies.
+ */
 
-var CourseView = Backbone.View.extend({
-  target: document.getElementById('root'),
+courseCollection = require('./collections').courseCollection;
+
+/**
+ * Expose `courseView`.
+ */
+
+module.exports = exports = courseView;
+
+/**
+ * Application prototype.
+ */
+
+var Courseview = Backbone.View.extend();
+
+/**
+ * Initialize a new `CourseView`.
+ *
+ * @api public
+ */
+
+CourseView({
+  target: document.getElementById('root'), 
 
   template: React.createClass({
     render: function () {
