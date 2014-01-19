@@ -14,10 +14,8 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/yoshuawuyts/zookeeper/issues"
-  }, 
-  "dependencies": {
-    
   },
+  "dependencies": {},
   "devDependencies": {
     "eslint-stylish": "~0.2.0",
     "gulp": "~3.4.1",
@@ -42,6 +40,14 @@
     "rework-calc": "~0.2.1",
     "rework-npm": "~0.3.0",
     "rework-vars": "~2.0.2",
-    "tiny-lr": "0.0.5"
+    "tiny-lr": "0.0.5",
+    "should": "~3.0.1",
+    "sinon": "~1.7.3",
+    "karma-script-launcher": "~0.1.0",
+    "karma-phantomjs-launcher": "~0.1.1",
+    "karma": "~0.10.9",
+    "gulp-karma": "0.0.2",
+    "mocha": "~1.17.0",
+    "karma-mocha": "~0.1.1"
   }
 }
