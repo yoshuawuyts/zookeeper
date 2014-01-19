@@ -8,13 +8,13 @@ var CourseModel = module.exports.CourseModel = Backbone.Model.extend({
     date: {
       start: new Date(),
       end: new Date()
-    }, 
+    },
     creator: 0
   }
 });
 
 var courseModel = exports.courseModel = new CourseModel({
   id: 1,
-  name: "why is this not working", 
-  institute: 1 
+  name: "why is this not working",
+  institute: 1
 });

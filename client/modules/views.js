@@ -7,21 +7,21 @@ var courseCollection = require('./collections').courseCollection;
  */
 
 var CourseView = Backbone.View.extend({
-  target: document.getElementById('root'), 
+  target: document.getElementById('root'),
 
   template: React.createClass({
-    render: function () {
+    render: function() {
       return React.DOM.a({
         href: "#"
       }, courseCollection.models[0].get("name"));
     }
   }),
 
-  initialize: function () {
+  initialize: function() {
     this.render();
-  }, 
+  },
 
-  render: function () {
+  render: function() {
     React.renderComponent(this.template({}), this.target);
 
     return this;
