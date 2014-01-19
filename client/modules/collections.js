@@ -1,8 +1,8 @@
-require('./models').CourseModel = CourseModel;
-require('./models').courseModel = courseModel;
+var CourseModel = require('./models').CourseModel;
+var courseModel = require('./models').courseModel;
 
-exports.CourseCollection = CourseCollection = Backbone.Collection.extend({
+var CourseCollection = exports.CourseCollection = Backbone.Collection.extend({
   model: CourseModel
 });
 
-exports.courseCollection = courseCollection = new CourseCollection([courseModel]);  
+var courseCollection = exports.courseCollection = new CourseCollection([courseModel]);

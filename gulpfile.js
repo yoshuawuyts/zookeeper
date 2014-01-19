@@ -16,7 +16,7 @@ require('./tasks/server');  // nodemon
 require('./tasks/static');  // copy fonts + images
 require('./tasks/styles');  // rework, autoprefixer, csso
 require('./tasks/tests');   // mocha
-require('./tasks/vendor');   // concat
+require('./tasks/vendor');  // concat
 
 /**
  * Default task

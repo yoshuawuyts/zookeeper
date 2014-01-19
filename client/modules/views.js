@@ -1,28 +1,22 @@
+'use strict';
+
 /**
  * Module dependencies.
  */
 
-courseCollection = require('./collections').courseCollection;
+var courseCollection = require('./collections').courseCollection;
 
 /**
  * Expose `courseView`.
  */
 
-module.exports = exports = courseView;
+var courseView = new CourseView({});
 
 /**
  * Application prototype.
  */
 
-var Courseview = Backbone.View.extend();
-
-/**
- * Initialize a new `CourseView`.
- *
- * @api public
- */
-
-CourseView({
+var CourseView = Backbone.View.extend({
   target: document.getElementById('root'), 
 
   template: React.createClass({
@@ -44,4 +38,4 @@ CourseView({
   }
 });
 
-var courseView = new CourseView({}); 
+module.exports = exports = courseView;

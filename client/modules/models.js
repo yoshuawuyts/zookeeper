@@ -1,4 +1,4 @@
-exports.CourseModel = CourseModel = Backbone.Model.extend({
+var CourseModel = module.exports.CourseModel = Backbone.Model.extend({
   defaults: {
     id: 0,
     name: "",
@@ -11,8 +11,8 @@ exports.CourseModel = CourseModel = Backbone.Model.extend({
   }
 });
 
-exports.courseModule = courseModel = new CourseModel({
+var courseModel = exports.courseModule = new CourseModel({
   id: 1,
-  name: "why is this required?",
+  name: "why is this not working",
   institute: 1 
 });
