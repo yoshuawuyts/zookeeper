@@ -1,1 +1,1 @@
-require('./views');
+require('./views');   

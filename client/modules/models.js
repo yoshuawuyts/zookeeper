@@ -13,6 +13,6 @@ var CourseModel = module.exports.CourseModel = Backbone.Model.extend({
 
 var courseModel = exports.courseModule = new CourseModel({
   id: 1,
-  name: "why is this not working",
+  name: "why is this not working", 
   institute: 1 
 });

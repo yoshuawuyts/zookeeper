@@ -1,16 +1,38 @@
 'use strict';
 
-/**
- * Module dependencies.
- */
+var CourseModel = module.exports.CourseModel = Backbone.Model.extend({
+  defaults: {
+    id: 0,
+    name: "",
+    institute: 0,
+    date: {
+      start: new Date(),
+      end: new Date()
+    }, 
+    creator: 0
+  }
+});
 
-var courseCollection = require('./collections').courseCollection;
+var courseModel = exports.courseModule = new CourseModel({
+  id: 1,
+  name: "why is this not working", 
+  institute: 1 
+});
 
-/**
- * Expose `courseView`.
- */
 
-var courseView = new CourseView({});
+
+
+
+var CourseCollection = Backbone.Collection.extend({
+  model: CourseModel
+});
+
+var courseCollection = exports.courseCollection = new CourseCollection([courseModel]);
+
+
+
+
+
 
 /**
  * Application prototype.
@@ -38,4 +60,8 @@ var CourseView = Backbone.View.extend({
   }
 });
 
-module.exports = exports = courseView;
+/**
+ * Expose `courseView`.
+ */
+
+var courseView = new CourseView({});

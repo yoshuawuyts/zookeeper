@@ -25,7 +25,7 @@ module.exports = gulp.task('modules', function() {
     .pipe(watch(function(files) {
     return files
       .pipe(grep('**/index.js'))
-      .pipe(debug())
+      // .pipe(debug())
       .pipe(browserify({
         buffer: false,
         debug: true

@@ -41,7 +41,7 @@ module.exports = gulp.task('lint', function() {
   gulp.src(path.tasks.src)
       .pipe(watch(function(files) {
       return files
-    .pipe(esformatter())
+.pipe(esformatter())
         .pipe(eslint())
         .pipe(eslint.format(eslintStylish));
     }));
