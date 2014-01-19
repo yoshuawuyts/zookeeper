@@ -1,6 +1,6 @@
-# Zookeeper
+# Zookeeper [![Dependency Status](https://david-dm.org/yoshuawuyts/zookeeper.png?theme=shields.io)](https://david-dm.org/yoshuawuyts/zookeeper) [![devDependency Status](https://david-dm.org/yoshuawuyts/zookeeper/dev-status.png?theme=shields.io)](https://david-dm.org/yoshuawuyts/zookeeper#info=devDependencies)
 
-A small task manager
+> A small task manager
 
 ## Links
 
