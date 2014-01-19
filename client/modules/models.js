@@ -1,3 +1,5 @@
+'use strict';
+
 var CourseModel = module.exports.CourseModel = Backbone.Model.extend({
   defaults: {
     id: 0,
@@ -11,7 +13,7 @@ var CourseModel = module.exports.CourseModel = Backbone.Model.extend({
   }
 });
 
-var courseModel = exports.courseModule = new CourseModel({
+var courseModel = exports.courseModel = new CourseModel({
   id: 1,
   name: "why is this not working", 
   institute: 1 
