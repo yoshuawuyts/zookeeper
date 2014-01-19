@@ -17,9 +17,9 @@ var nodemon = require('gulp-nodemon');
 module.exports = gulp.task('server', function() {
 
   // src
-  gulp.src(path.api.index)
-
-    // nodemon (https://github.com/JacksonGariety/gulp-nodemon)
-    .pipe(nodemon());
+  nodemon({
+    options: '',
+    scripts: path.api.index
+  });
 
 });
