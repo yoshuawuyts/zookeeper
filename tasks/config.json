@@ -60,9 +60,7 @@
 
   "tests": {
     "src": [
-      "tests/*.js",
-      "tests/**/*.js",
-      "tests/**/**/*.js"
+      "tests/index.js"
     ],
     "cwd": "tests/",
     "index": "tests/test.js"

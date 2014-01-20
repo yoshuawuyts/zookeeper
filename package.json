@@ -28,6 +28,7 @@
     "gulp-esformatter": "~0.1.0",
     "gulp-eslint": "~0.1.1",
     "gulp-grep-stream": "0.0.2",
+    "gulp-karma": "0.0.2",
     "gulp-livereload": "~0.2.0",
     "gulp-mocha": "~0.4.0",
     "gulp-nodemon": "0.1.1",
@@ -36,18 +37,15 @@
     "gulp-rework": "~0.2.0",
     "gulp-uglify": "~0.1.0",
     "gulp-watch": "~0.5.0",
+    "mocha": "~1.17.0",
+    "phantomjs": "~1.9.2-6",
     "rework-breakpoints": "~0.6.0",
     "rework-calc": "~0.2.1",
     "rework-npm": "~0.3.0",
     "rework-vars": "~2.0.2",
-    "tiny-lr": "0.0.5",
     "should": "~3.0.1",
     "sinon": "~1.7.3",
-    "karma-script-launcher": "~0.1.0",
-    "karma-phantomjs-launcher": "~0.1.1",
-    "karma": "~0.10.9",
-    "gulp-karma": "0.0.2",
-    "mocha": "~1.17.0",
-    "karma-mocha": "~0.1.1"
+    "tiny-lr": "0.0.5",
+    "backbone": "~1.1.0"
   }
 }

@@ -6,9 +6,10 @@
 
 var gulp = require('gulp');
 var path = require('./config.json');
+var debug = require('gulp-debug');
+var browserify = require('gulp-browserify');
 var watch = require('gulp-watch');
 var mocha = require('gulp-mocha');
-var karma = require('gulp-karma');
 
 /**
  * Expose 'gulp.task'
@@ -18,7 +19,6 @@ var karma = require('gulp-karma');
 
 module.exports = gulp.task('tests', function() {
 
-/*
   gulp.src(path.tests.src)
 
     // run tests
@@ -27,21 +27,5 @@ module.exports = gulp.task('tests', function() {
     reporter: 'dot',
     globals: []
   }));
-*/
-
-  return gulp.src(path.tests.src)
-    .pipe(karma({
-      action: 'run',
-      basePath: '',
-      frameworks: ['mocha'],
-      reporters: ['dots'],
-      port: 9876,
-      colors: true,
-      autoWatch: false,
-      browsers: ['PhantomJS'],
-      captureTimeout: 60000,
-
-    }));
-
 
 });

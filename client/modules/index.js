@@ -1,1 +1,2 @@
-require('./views');
+require('./tasks/index');
+require('./projects/index');
