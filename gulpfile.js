@@ -28,8 +28,8 @@ gulp.task('default', function() {
     'modules',
     'static',
     'styles',
-    'lint',
-    'tests' 
+    'lint'
+    // 'tests' 
   );
   gulp.run(
     'server'

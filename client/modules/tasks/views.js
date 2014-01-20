@@ -1,18 +1,22 @@
 'use strict';
 
+/**
+ * Module dependencies
+ */
+
 var courseCollection = require('./collections').courseCollection;
 
 /**
  * Application prototype.
  */
 
-var CourseView = Backbone.View.extend({
-  target: document.getElementById('root'),
+var CourseView = exports.CourseView = Backbone.View.extend({
+  parent: document.getElementById('root'),
 
   template: React.createClass({
     render: function() {
       return React.DOM.a({
-        href: "#"
+        href: "/12"
       }, courseCollection.models[0].get("name"));
     }
   }),
@@ -22,14 +26,8 @@ var CourseView = Backbone.View.extend({
   },
 
   render: function() {
-    React.renderComponent(this.template({}), this.target);
+    React.renderComponent(this.template({}), this.parent);
 
     return this;
   }
 });
-
-/**
- * Expose `courseView`.
- */
-
-var courseView = new CourseView({});
