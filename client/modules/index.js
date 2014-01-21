@@ -11,7 +11,6 @@ require('./projects/handler');
  * Options
  */
 
-// Remove '/#/' from routes
 Backbone.history.start({
   pushState: true
 });

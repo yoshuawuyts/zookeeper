@@ -4,7 +4,7 @@
  * Module dependencies
  */
 
-var CourseView = require('./views.js').CourseView;
+var CourseView = require('./view_tasks.js').CourseView;
 
 /**
  * AppRouter prototype.
@@ -18,9 +18,6 @@ var Router = Backbone.Router.extend({
 
   home: function() {
     var courseView = new CourseView({});
-  },
-  project: function() {
-    // var projectView = new ProjectView({});
   }
 });
 
