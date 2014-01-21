@@ -4,6 +4,7 @@
  * Module dependencies
  */
 
+var rootView = require('./view_root.js').render;
 var CourseView = require('./view_tasks.js').CourseView;
 
 /**
@@ -12,12 +13,11 @@ var CourseView = require('./view_tasks.js').CourseView;
 
 var Router = Backbone.Router.extend({
   routes: {
-    '': 'home',
-    ':project': 'project'
+    '': 'home'
   },
 
   home: function() {
-    var courseView = new CourseView({});
+    rootView()
   }
 });
 

@@ -11,12 +11,12 @@ var courseCollection = require('./resource_collections').courseCollection;
  */
 
 var CourseView = exports.CourseView = Backbone.View.extend({
-  
+
   // Set initialize sequence
   initialize: function() {
     this.render();
   },
-  target: document.getElementById('root'),
+  target: document.getElementById('taskHook'),
   render: function() {
     React.renderComponent(this.template({}), this.target);
     return this;
@@ -25,18 +25,17 @@ var CourseView = exports.CourseView = Backbone.View.extend({
   // Template
   template: React.createClass({
 
-    handleSubmit: function() {
+    handleClick: function() {
       event.preventDefault();
     },
 
     render: function() {
       return (
-        React.DOM.a({
-          href: '/12',
-          onClick: this.handleSubmit
-        }, courseCollection.models[0].get("name"))
-      )
+      React.DOM.a({
+        href: '/12',
+        onClick: this.handleClick
+      }, courseCollection.models[0].get("name"))
+      );
     }
   })
-
 });
