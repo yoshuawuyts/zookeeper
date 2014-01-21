@@ -5,9 +5,10 @@
  */
 
 var courseCollection = require('./resource_collections').courseCollection;
+var router = require('./handler').router;
 
 /**
- * Application prototype.
+ * Application prototype
  */
 
 var CourseView = exports.CourseView = Backbone.View.extend({
@@ -27,6 +28,9 @@ var CourseView = exports.CourseView = Backbone.View.extend({
 
     handleClick: function() {
       event.preventDefault();
+      router.navigate('/12', {
+        trigger: true
+      });
     },
 
     render: function() {

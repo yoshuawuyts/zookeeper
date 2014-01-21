@@ -4,7 +4,7 @@
  * Module dependencies
  */
 
-var CourseView = require('./view_home.js').CourseView;
+var rootView = require('./view_home.js').rootView;
 
 /**
  * AppRouter prototype.
@@ -12,10 +12,13 @@ var CourseView = require('./view_home.js').CourseView;
 
 var Router = Backbone.Router.extend({
   routes: {
-    ':project': 'project'
+   
   },
 
-  project: function(){}
+  project: function(){
+    console.log('I CHANGED ROUTES');
+    rootView();
+  }
 });
 
 /**

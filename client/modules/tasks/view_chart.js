@@ -20,7 +20,7 @@ var svgComponent = exports.svgComponent = React.createClass({
   render: function() {
     return (
     React.DOM.div({
-      className: 'svgComponent'
+      className: 'svgComponent size1of1'
     })
     )
   }
