@@ -1,5 +1,1 @@
-.svgComponent {
-  width: 100px;
-  height: 100px;
-  background-color: red;
-}
+@import "./client/styles/utilities/grid";
