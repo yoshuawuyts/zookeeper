@@ -7,7 +7,8 @@
 var rootView = require('./view_root.js').render;
 
 /**
- * AppRouter prototype.
+ * Exports
+ * @exportProps: router
  */
 
 var Router = exports.router = Backbone.Router.extend({
@@ -16,7 +17,7 @@ var Router = exports.router = Backbone.Router.extend({
   },
 
   home: function() {
-    console.log('IM HOME BABY');
+    console.log('TASKS VIEW');
     rootView();
   }
 });

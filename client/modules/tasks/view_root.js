@@ -4,11 +4,14 @@
  * Module dependencies
  */
 
-var menuComponent = require('../view_menu').menuComponent;
-var svgComponent = require('./view_chart').svgComponent;
+var menuComponent = require('../menu/handler').component;
+var svgComponent = require('./chart/handler').component;
+var viewTask = require('./taskItem/handler').component;
 
 /**
  * Exports
+ * @exportProps: render
+ * @method: render
  */
 
 var render = exports.render = function() {
@@ -26,7 +29,8 @@ var template = React.createClass({
       React.DOM.div(
         null,
         menuComponent(),
-        svgComponent()
+        svgComponent(),
+        viewTask()
       )
     );
   }

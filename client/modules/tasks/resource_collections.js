@@ -1,10 +1,10 @@
 'use strict';
 
-var CourseModel = require('./resource_models.js').CourseModel;
-var courseModel = require('./resource_models.js').courseModel;
+var CourseModel = require('./resource_models.js').Model;
+var courseModel = require('./resource_models.js').model;
 
-var CourseCollection = exports.CourseCollection = Backbone.Collection.extend({
+var CourseCollection = exports.Collection = Backbone.Collection.extend({
   model: CourseModel
 });
 
-var courseCollection = exports.courseCollection = new CourseCollection([courseModel]);
+var courseCollection = exports.collection = new CourseCollection([courseModel]);
