@@ -6,7 +6,7 @@
 
 var menuComponent = require('../menu/handler').component;
 var svgComponent = require('./chart/handler').component;
-var viewTask = require('./taskItem/handler').component;
+var viewTask = require('./item/handler').component;
 
 /**
  * Exports
