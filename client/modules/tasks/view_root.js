@@ -5,7 +5,6 @@
  */
 
 var menuComponent = require('../view_menu').menuComponent;
-var testComponent = require('./view_chart').testComponent;
 var svgComponent = require('./view_chart').svgComponent;
 
 /**
@@ -27,8 +26,7 @@ var template = React.createClass({
       React.DOM.div(
         null,
         menuComponent(),
-        svgComponent(),
-        testComponent({username: 'yoshuawuyts'})
+        svgComponent()
       )
     );
   }

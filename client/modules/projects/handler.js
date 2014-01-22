@@ -4,15 +4,15 @@
  * Module dependencies
  */
 
-var rootView = require('./view_home.js').rootView;
+var rootView = require('./view_home.js').render;
 
 /**
  * AppRouter prototype.
  */
 
-var Router = Backbone.Router.extend({
+var Router = exports.router = Backbone.Router.extend({
   routes: {
-   
+    '12': 'project'
   },
 
   project: function(){
@@ -20,9 +20,3 @@ var Router = Backbone.Router.extend({
     rootView();
   }
 });
-
-/**
- * Create new 'Router'
- */
-
-var router = exports.router = new Router();

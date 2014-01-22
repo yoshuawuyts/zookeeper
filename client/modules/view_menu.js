@@ -4,6 +4,7 @@
  * Exports
  */
 
+
 var menuComponent = exports.menuComponent = React.createClass({
   displayName: 'ProfilePic',
   render: function() {
@@ -21,8 +22,7 @@ var homeButton = React.createClass({
 
   clickHandler: function() {
     event.preventDefault();
-    var app = new Backbone.Router();
-    app.navigate('/12');
+    Backbone.history.navigate('/12', true);
   },
 
   render: function() {

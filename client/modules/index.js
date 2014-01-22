@@ -4,8 +4,15 @@
  * Module dependencies
  */
 
-require('./tasks/handler');
-require('./projects/handler');
+var Tasks = require('./tasks/handler').router;
+var Projects = require('./projects/handler').router;
+
+/**
+ * Init routers
+ */
+
+var tasks = new Tasks();
+var projects = new Projects();
 
 /**
  * Options
