@@ -1,4 +1,5 @@
 @import "./client/styles/utilities/normalize";
+@import "./client/styles/utilities/base";
 @import "./client/styles/utilities/grid";
 
 .svgComponent {
