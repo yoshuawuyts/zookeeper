@@ -23,11 +23,15 @@ var items = exports.component = React.createClass({
     var rows = [];
     TASKS.forEach(function(task) {
       rows.push(
-        React.DOM.div(null, task.key),
-        React.DOM.div(null, task.name),
-        React.DOM.div(null, task.text),
-        editButton(),
-        deleteButton()
+        React.DOM.div({
+          className: 'item'
+        },
+          React.DOM.div(null, task.key),
+          React.DOM.div(null, task.name),
+          React.DOM.div(null, task.text),
+          editButton(),
+          deleteButton()
+        )
       );
     });
 

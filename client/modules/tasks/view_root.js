@@ -6,7 +6,7 @@
 
 var menuComponent = require('../menu/handler').component;
 var svgComponent = require('./chart/handler').component;
-var item = require('./item/handler').component;
+var itemComponent = require('./item/handler').component;
 
 /**
  * Exports
@@ -30,7 +30,7 @@ var template = React.createClass({
         null,
         menuComponent(),
         svgComponent(),
-        item()
+        itemComponent()
       )
     );
   }
