@@ -12,20 +12,31 @@ var deleteButton = require('./view_deleteButton').component;
 * Template
 */
 
-var taskItem = exports.component = React.createClass({
+var items = exports.component = React.createClass({
   
-  displayName: 'taskItem',
+  displayName: 'items',
 
   render: function() {
-    return (
-      React.DOM.div({
-        className: 'taskItem row',
-        children: [
-          taskText(),
-          editButton(),
-          deleteButton()
-        ]
-      })
-    );
+
+    // Create a new item for each entry
+    // in the item model
+    var rows = [];
+    TASKS.forEach(function(task) {
+      rows.push(
+        React.DOM.div(null, task.key),
+        React.DOM.div(null, task.name),
+        React.DOM.div(null, task.text),
+        editButton(),
+        deleteButton()
+      );
+    });
+
+    // Return all items to be rendered
+    return (React.DOM.div(null, rows));
   }
 });
+
+var TASKS = [
+  {key: '1', name: 'Sporting Goods', text: 'Lorem Ipsum', completed: false},
+  {key: '2', name: 'hercule sporty', text: 'Dolor sit a', completed: false}
+];
