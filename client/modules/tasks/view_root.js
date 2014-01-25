@@ -10,8 +10,6 @@ var itemComponent = require('./item/handler').component;
 
 /**
  * Exports
- * @exportProps: render
- * @method: render
  */
 
 var render = exports.render = function() {

@@ -5,10 +5,16 @@
  */
 
 var rootView = require('./view_root.js').render;
+var itemCollection = require('./resource_item').collection;
 
 /**
  * Exports
- * @exportProps: router
+ */
+
+exports.collection = itemCollection;
+
+/**
+ * Exports
  */
 
 var Router = exports.router = Backbone.Router.extend({
@@ -17,7 +23,6 @@ var Router = exports.router = Backbone.Router.extend({
   },
 
   home: function() {
-    console.log('TASKS VIEW');
     rootView();
   }
 });

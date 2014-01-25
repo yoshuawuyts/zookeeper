@@ -4,13 +4,13 @@
  * Module dependencies
  */
 
-var taskText = require('./view_taskText').component;
+var collection = require('../resource_item').collection;
 var editButton = require('./view_editButton').component;
 var deleteButton = require('./view_deleteButton').component;
 
 /*
-* Template
-*/
+ * Template
+ */
 
 var items = exports.component = React.createClass({
   
@@ -20,18 +20,20 @@ var items = exports.component = React.createClass({
 
     // Create a new item for each entry
     // in the item model
+
     var rows = [];
-    TASKS.forEach(function(task) {
+    collection.forEach(function(item) {
       rows.push(
         React.DOM.div({
-          className: 'item'
-        },
-          React.DOM.div(null, task.key),
-          React.DOM.div(null, task.name),
-          React.DOM.div(null, task.text),
-          editButton(),
-          deleteButton()
-        )
+          className: 'item',
+          children: [
+            React.DOM.div(null, item.attributes.id),
+            React.DOM.div(null, item.attributes.name),
+            React.DOM.div(null, item.attributes.text),
+            editButton(),
+            deleteButton()
+          ]
+        })
       );
     });
 
@@ -39,8 +41,3 @@ var items = exports.component = React.createClass({
     return (React.DOM.div(null, rows));
   }
 });
-
-var TASKS = [
-  {key: '1', name: 'Sporting Goods', text: 'Lorem Ipsum', completed: false},
-  {key: '2', name: 'hercule sporty', text: 'Dolor sit a', completed: false}
-];
