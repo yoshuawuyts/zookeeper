@@ -2,22 +2,6 @@
 
 > A small task manager
 
-## Links
-
-- [Design document](https://gist.github.com/yoshuawuyts/8446529)
-
-## Stack
-- __client:__ [react](facebook.github.io/react) + [backbone](backbonejs.org)
-- __api:__ [koa](koajs.com) + [dropboxer](https://github.com/yoshuawuyts/dropboxer)
-
-# Zookeeper design doc
-This document is split into the following sections:
-
-- [Goals]()
-- [Definition of Done](https://gist.github.com/yoshuawuyts/8446529#definition-of-done)
-- [User interface](https://gist.github.com/yoshuawuyts/8446529#user-interface)
-- [Implementation](https://gist.github.com/yoshuawuyts/8446529#implementation)
-
 ## Goals
 The primary goal of building Zookeeper is to explore the client side MVC structure of Backbone, amplified with Facebook's React. Secondly we're going to attempt to handle Koa (node generators/yield framework) and wrap the Dropbox API to consume it as a service. Zookeeper will be built according to the [RAPHT](https://github.com/DanielWaterworth/Raphters/blob/master/RAPHT) module pattern.
 
@@ -35,12 +19,11 @@ Zookeeper is a small task manager. It will have the following features:
 
 ## Implementation
 
-
 #### Application structure
 ![chart](http://i.minus.com/jxLdmntT565h0.png)
 
 #### Data models
-````json
+````js
 
 // Tasks model
 {
