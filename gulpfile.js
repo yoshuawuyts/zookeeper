@@ -4,9 +4,10 @@
  * Module dependencies
  */
 
-var gulp = require('gulp');
-var path = require('centurion');
 var gulpUtil = require('gulp-util');
+var path = require('centurion');
+
+// use centurion
 
 try {
   require(path.resolve(__dirname, gulpUtil.env.gulpfile));
