@@ -11,7 +11,7 @@ var serve = require('koa-static');
 var mount = require('koa-mount');
 var koa = require('koa');
 var route = new router();
-var app = exports.app = require('../server');
+var app = koa();
 
 /**
  * Expose route
@@ -21,7 +21,7 @@ module.exports = route.middleware();
 
 // get
 route.get('/', function *() {
-  app.use(serve('.'));
+  app.use(serve(__dirname + '.'));
 });
 
 // delete

@@ -9,8 +9,9 @@ var ratelimit = require('koa-ratelimit');
 var tasks = require('./tasks/handler');
 var compress = require('koa-compress');
 var logger = require('koa-logger');
-var mount = require('koa-mount');
 var router = require('koa-router');
+var serve = require('koa-static');
+var mount = require('koa-mount');
 var route = require('koa-route');
 var koa = require('koa');
 var app = koa();
@@ -40,7 +41,12 @@ app.use(compress());
 
 // routing
 
-app.use(mount('/', tasks));
+var router2 = new router;
+router2.get('/', function *() {
+  app.use(serve('.'));
+});
+
+app.use(mount('/', router2.middleware()));
 
 // listen
 
