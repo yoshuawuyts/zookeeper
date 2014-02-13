@@ -1,18 +1,16 @@
 'use strict';
 
 /**
-* Module dependencies
-*/
+ * Module dependencies
+ */
 
 var responseTime = require('koa-response-time');
 var ratelimit = require('koa-ratelimit');
-var tasks = require('./tasks/handler');
 var compress = require('koa-compress');
 var logger = require('koa-logger');
-var router = require('koa-router');
-var serve = require('koa-static');
+var Router = require('koa-router');
 var mount = require('koa-mount');
-var route = require('koa-route');
+var serve = require('koa-static');
 var koa = require('koa');
 var app = koa();
 
@@ -29,26 +27,18 @@ module.exports = app;
 var env = process.env.NODE_ENV || 'development';
 var port = process.env.PORT || 1337;
 
-// database
-
-var db = exports.db = [];
-
 // middleware
 
-if ('test' != env) app.use(logger());
+if (env != 'test') app.use(logger());
 app.use(responseTime());
 app.use(compress());
 
-// routing
+// static files
 
-var router2 = new router;
-router2.get('/', function *() {
-  app.use(serve('.'));
-});
-
-app.use(mount('/', router2.middleware()));
+app.use(serve(__dirname + '/../build'));
 
 // listen
 
 app.listen(port);
-console.log('listening on port ' + port);
+console.log("Port: " + port);
+console.log("Environment: " + env);
