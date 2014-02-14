@@ -4,15 +4,15 @@
  * Module dependencies
  */
 
-var collection = require('../resource_item').collection;
-var editButton = require('./view_editButton').component;
-var deleteButton = require('./view_deleteButton').component;
+var collection = require('../../resources/item').collection;
+var editButton = require('./buttons/editButton');
+var deleteButton = require('./buttons/deleteButton');
 
 /*
  * Template
  */
 
-var items = exports.component = React.createClass({
+module.exports = React.createClass({
   
   displayName: 'items',
 

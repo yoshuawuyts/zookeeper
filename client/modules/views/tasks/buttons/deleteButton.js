@@ -1,19 +1,19 @@
 'use strict';
 
-var editButton = exports.component = React.createClass({
-  displayName: 'editButton',
+module.exports = React.createClass({
+  displayName: 'deleteButton',
 
   clickAction: function() {
     //event.preventDefault();
-    // handle edit action
+    // handle delete action
   },
 
   render: function() {
     return (
       React.DOM.button({
-        className: 'editButton size1of8',
+        className: 'deleteButton size1of8',
         onClick: this.clickAction()
-      }, 'edit')
+      }, 'delete')
     );
   }
 });

@@ -1,6 +1,6 @@
 'use strict';
 
-var homeButton = require('./component_home').component;
+var homeButton = require('./menu/home');
 
 /**
  * Exports
@@ -8,7 +8,7 @@ var homeButton = require('./component_home').component;
  * Element: menuComponent
  */
 
-var menuComponent = exports.component = React.createClass({
+module.exports = React.createClass({
   displayName: 'ProfilePic',
   render: function() {
     return (

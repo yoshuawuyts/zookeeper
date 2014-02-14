@@ -4,15 +4,15 @@
  * Module dependencies
  */
 
-var menuComponent = require('../menu/handler').component;
-var svgComponent = require('./chart/handler').component;
-var itemComponent = require('./item/handler').component;
+var menuComponent = require('./menu');
+var chartComponent = require('./tasks/chart');
+var itemComponent = require('./tasks/item');
 
 /**
  * Exports
  */
 
-var render = exports.render = function() {
+module.exports = function() {
   React.renderComponent(template({}), document.getElementById('root'));
 };
 
@@ -27,7 +27,7 @@ var template = React.createClass({
       React.DOM.div(
         null,
         menuComponent(),
-        svgComponent(),
+        chartComponent(),
         itemComponent()
       )
     );

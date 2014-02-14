@@ -4,7 +4,7 @@
  * Exports
  */
 
-var svgComponent = exports.component = React.createClass({
+module.exports = React.createClass({
   displayName: 'svgComponent',
   render: function() {
     return (

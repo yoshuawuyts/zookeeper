@@ -1,17 +1,17 @@
 'use strict';
 
-var homeButton = exports.component = React.createClass({
+module.exports = React.createClass({
   displayName: 'homeButton',
 
   clickHandler: function() {
     event.preventDefault();
-    Backbone.history.navigate('/12', true);
+    Backbone.history.navigate('/', true);
   },
 
   render: function() {
     return (
       React.DOM.a({
-        href: '/12',
+        href: '/',
         className: 'size1of8',
         children: [
           React.DOM.button({

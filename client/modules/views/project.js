@@ -4,7 +4,7 @@
  * Module dependencies
  */
 
-var menuComponent = require('../menu/handler.js').component;
+var menuComponent = require('./menu');
 
 /**
  * Exports
@@ -13,8 +13,8 @@ var menuComponent = require('../menu/handler.js').component;
  * @params: {target}
  */
 
-var render = exports.render = function(target) {
-  React.renderComponent(template({}), document.getElementById(target));
+module.exports = function(target) {
+  React.renderComponent(template({}), document.getElementById('root'));
 };
 
 /**
@@ -27,7 +27,8 @@ var template = React.createClass({
     return (
       React.DOM.div(
         null,
-        menuComponent()
+        menuComponent(),
+        'hello'
       )
     );
   }
