@@ -13,7 +13,7 @@ var itemComponent = require('./tasks/item');
  */
 
 module.exports = function() {
-  React.renderComponent(template({}), document.getElementById('root'));
+  React.renderComponent(template({}), document.getElementById('root')); 
 };
 
 /**
@@ -24,8 +24,7 @@ var template = React.createClass({
 
   render: function() {
     return (
-      React.DOM.div(
-        null,
+      React.DOM.div( null,
         menuComponent(),
         chartComponent(),
         itemComponent()

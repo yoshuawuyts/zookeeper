@@ -7,14 +7,11 @@
 var menuComponent = require('./menu');
 
 /**
- * Exports
- * @exportProps: render
- * @method: render
- * @params: {target}
+ * Render
  */
 
 module.exports = function(target) {
-  React.renderComponent(template({}), document.getElementById('root'));
+  React.renderComponent(template(), document.getElementById('root'));
 };
 
 /**
@@ -25,10 +22,8 @@ var template = React.createClass({
 
   render: function() {
     return (
-      React.DOM.div(
-        null,
-        menuComponent(),
-        'hello'
+      React.DOM.div( null,
+        menuComponent()
       )
     );
   }

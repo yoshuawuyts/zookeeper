@@ -1,6 +1,11 @@
 'use strict';
 
+/**
+ * Template
+ */
+
 module.exports = React.createClass({
+
   displayName: 'homeButton',
 
   clickHandler: function() {
@@ -10,15 +15,11 @@ module.exports = React.createClass({
 
   render: function() {
     return (
-      React.DOM.a({
-        href: '/',
-        className: 'size1of8',
-        children: [
-          React.DOM.button({
-            onClick: this.clickHandler
-          }, 'HOME BUTTON')
-        ]
-      })
-    )
+      React.DOM.a({ href: '/', className: 'size1of8'},
+        React.DOM.button({ onClick: this.clickHandler},
+          'HOME BUTTON'
+        )
+      )
+    );
   }
 });

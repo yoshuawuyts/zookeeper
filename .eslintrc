@@ -27,7 +27,10 @@
   },
   "globals": {
     "angular": false,
-    "$": false
+    "$": false,
+    "React": true,
+    "event": true,
+    "Backbone": true
   },
   "env":{
     "browser": true,

@@ -3,26 +3,16 @@
 var homeButton = require('./menu/home');
 
 /**
- * Exports
- * @exportProps: menuComponent
- * Element: menuComponent
+ * Template
  */
 
 module.exports = React.createClass({
   displayName: 'ProfilePic',
   render: function() {
     return (
-      React.DOM.menu({
-        className: 'row'
-      },
-        null,
+      React.DOM.menu({className: 'row'},
         homeButton()
       )
-    )
+    );
   }
 });
-
-/**
- * Element: homeButton
- */
-

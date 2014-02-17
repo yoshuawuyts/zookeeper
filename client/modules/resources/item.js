@@ -1,10 +1,10 @@
 'use strict';
 
 /**
- * Prototype Model
+ * Model
  */
 
-var ItemModel = module.exports.model = Backbone.Model.extend({
+var ItemModel = Backbone.Model.extend({
   defaults: {
     id: 0,
     name: "Item name",
@@ -14,7 +14,7 @@ var ItemModel = module.exports.model = Backbone.Model.extend({
 });
 
 /**
- * Prototype Collection
+ * Collection
  */
 
 var ItemCollection = Backbone.Collection.extend({
@@ -25,12 +25,5 @@ var ItemCollection = Backbone.Collection.extend({
  * Exports
  */
 
-var itemCollection = exports.collection = new ItemCollection([]);
-
-/**
- * Add content
- */
-
-itemCollection.add({id: '1', name: 'Sporting Goods', text: 'Lorem Ipsum', completed: false});
-
-// GET content from server
+exports.collection = ItemCollection;
+exports.model = ItemModel;

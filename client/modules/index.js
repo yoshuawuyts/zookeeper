@@ -14,10 +14,10 @@ var taskView = require('./views/task');
 var Router = Backbone.Router.extend({
   routes: {
     '': 'project',
-    '12': 'task'
+    ':task': 'task'
   },
-  home: function() { projectView(); console.log('home')},
-  project: function(){ taskView(); console.log('project')}
+  home: function() { projectView(); console.log('project');},
+  project: function(){ taskView(); console.log('task');}
 });
 
 var router = new Router();

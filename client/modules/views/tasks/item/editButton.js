@@ -10,10 +10,9 @@ module.exports = React.createClass({
 
   render: function() {
     return (
-      React.DOM.button({
-        className: 'editButton size1of8',
-        onClick: this.clickAction()
-      }, 'edit')
+      React.DOM.button({ className: 'editButton size1of8', onClick: this.clickAction()}, 
+        'edit'
+      )
     );
   }
 });
