@@ -4,7 +4,7 @@ module.exports = React.createClass({
   displayName: 'edititem linkButton',
 
   clickHandler: function(name) {
-    //event.preventDefault();
+    event.preventDefault();
     Backbone.history.navigate('/' + name, true);
   },
 

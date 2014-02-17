@@ -22,8 +22,8 @@ module.exports = React.createClass({
     this.props.items = items;
     items.add([
       {id: 1, name: 'hello', text: 'world'},
-      {id: 2, name: 'hello', text: 'world'},
-      {id: 3, name: 'hello', text: 'world'}
+      {id: 2, name: 'you', text: 'world'},
+      {id: 3, name: 'boats are awesome', text: 'world'}
     ]);
   },
 
@@ -38,7 +38,7 @@ module.exports = React.createClass({
           React.DOM.div(null, item.attributes.id),
 
           linkComponent({name: item.attributes.name}),
-          
+
           React.DOM.div(null, item.attributes.text),
           editButton(),
           deleteButton()
