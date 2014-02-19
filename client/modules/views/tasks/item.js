@@ -4,7 +4,6 @@
  * Module dependencies
  */
 
-var linkComponent = require('./item/linkComponent');
 var deleteButton = require('./item/deleteButton');
 var editButton = require('./item/editButton');
 
@@ -20,11 +19,11 @@ module.exports = React.createClass({
     // Create a new item for each entry
     // in the item model
     var rows = [];
-    this.props.items.forEach(function(item) {
+    this.props.itemCollection.forEach(function(item) {
       rows.push(
         React.DOM.div({ className: 'item'},
           React.DOM.div(null, item.attributes.id),
-          linkComponent({name: item.attributes.name}),
+          React.DOM.h4(null, item.attributes.name),
           React.DOM.div(null, item.attributes.text),
           editButton(),
           deleteButton()

@@ -4,11 +4,11 @@
  * Module dependencies
  */
 
-var Items = require('../resources/item').collection;
-var chartComponent = require('./tasks/chart');
+var ItemCollection = require('../resources/item').collection;
+var inputComponent = require('./tasks/input');
 var itemComponent = require('./tasks/item');
 var menuComponent = require('./menu');
-var items =  new Items();
+var itemCollection =  new ItemCollection();
 
 /**
  * Exports
@@ -25,8 +25,8 @@ module.exports = function() {
 var template = React.createClass({
 
   getDefaultProps: function () {
-    this.props.items = items;
-    items.add([
+    this.props.itemCollection = itemCollection;
+    itemCollection.add([
       {id: 1, name: 'hello', text: 'world'},
       {id: 2, name: 'you', text: 'world'},
       {id: 3, name: 'boats are awesome', text: 'world'}
@@ -37,8 +37,9 @@ var template = React.createClass({
     return (
       React.DOM.div( null,
         menuComponent(),
+        inputComponent({itemCollection: this.props.itemCollection}),
         React.DOM.h1(null, 'Task view'),
-        itemComponent({items: this.props.items})
+        itemComponent({itemCollection: this.props.itemCollection})
       )
     );
   }
