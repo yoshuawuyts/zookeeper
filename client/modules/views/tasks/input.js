@@ -1,40 +1,48 @@
 'use strict';
 
-/**
- * Module dependencies
- */
-
 /*
  * Template
  */
+
 module.exports = React.createClass({
 
   displayName: 'input',
 
   getInitialState: function() {
-    return {value: 'hellow!'};
+    // Render HTML placeholder value
+    return {value: ''};
   },
 
   handleChange: function() {
+    // Set state equal to input
     this.setState({value: event.target.value});
   },
 
   handleClick: function() {
+
+    // Prevent browser from handling clicks
     event.preventDefault();
-    // id: 0,
-    // name: "Item name",
-    // text: "Input text...",
-    // completed: false
-    console.log(this.state.value);
+
+    // Add value to Backbone collection
     this.props.itemCollection.add({name: this.state.value});
+
+    // Clear state
+    this.setState({value: ''});
   },
 
   render: function() {
+
+    // Initialize vars
+    var itemCollection = this.props.itemCollection;
+    var placeholder = 'What´s on your mind?';
+    var handleChange = this.handleChange;
     var value = this.state.value;
+
+    // Return DOM elements
     return (
       React.DOM.form(null,
-        React.DOM.input({value: value, onChange: this.handleChange}),
-        React.DOM.button({onClick: this.handleClick.bind(null, this.props.itemCollection)}, 'Save')
+        React.DOM.input({placeholder: placeholder, value: value, onChange: handleChange}),
+        React.DOM.button({onClick: this.handleClick.bind(null, itemCollection)}, 'Save')
       )
     );
   }
