@@ -7,13 +7,6 @@
 var ItemCollection = require('./item').collection;
 
 /**
- * Exports
- */
-
-exports.collection = ProjectCollection;
-exports.model = ProjectModel;
-
-/**
  * Model
  */
 
@@ -34,3 +27,10 @@ var ProjectCollection = Backbone.Collection.extend({
   model: ProjectModel,
   url: '/collections'
 });
+
+/**
+ * Exports
+ */
+
+exports.collection = ProjectCollection;
+exports.model = ProjectModel;
