@@ -10,6 +10,7 @@ module.exports = React.createClass({
 
   render: function() {
     return (
+      // Render 'a' with name + url
       React.DOM.a({href: '/' + this.props.name, onClick: this.clickHandler.bind(null, this.props.name)}, this.props.name)
     );
   }

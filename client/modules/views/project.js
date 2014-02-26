@@ -27,8 +27,7 @@ var template = React.createClass({
     this.props.projects = projectsCollection;
     projectsCollection.add([{
       id: 0,
-      name: 'Item name',
-      urlRoot: '/collections'
+      name: 'collection'
     }]);
     projectsCollection.fetch();
   },

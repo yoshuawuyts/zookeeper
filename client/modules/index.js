@@ -26,9 +26,7 @@ var router = new Router();
  * Options
  */
 
-localforage.setDriver('asyncStorage', function() {
-    console.log(localforage.driver);
-});
+localforage.setDriver('asyncStorage');
 
 Backbone.history.start({
   pushState: true

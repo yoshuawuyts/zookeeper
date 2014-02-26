@@ -26,7 +26,7 @@ var template = React.createClass({
 
   getDefaultProps: function () {
     this.props.itemCollection = itemCollection;
-    itemCollection.add([
+    itemCollection.create([
       {id: 1, name: 'hello', text: 'world'},
       {id: 2, name: 'you', text: 'world'},
       {id: 3, name: 'boats are awesome', text: 'world'}
