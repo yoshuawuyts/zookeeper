@@ -18,7 +18,8 @@ var ItemModel = Backbone.Model.extend({
  */
 
 var ItemCollection = Backbone.Collection.extend({
-  model: ItemModel
+  model: ItemModel,
+  sync: Backbone.localforage.sync('MyOfflineStore')
 });
 
 /**

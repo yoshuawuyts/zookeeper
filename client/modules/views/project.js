@@ -4,10 +4,10 @@
  * Module dependencies
  */
 
-var Projects = require('../resources/project').collection;
+var ProjectsCollection = require('../resources/project').collection;
 var projectComponent = require('./projects/project');
+var projectsCollection = new ProjectsCollection();
 var menuComponent = require('./menu');
-var projects = new Projects();
 
 /**
  * Render
@@ -24,12 +24,13 @@ module.exports = function(target) {
 var template = React.createClass({
 
   getDefaultProps: function () {
-    this.props.projects = projects;
-    projects.add([{
+    this.props.projects = projectsCollection;
+    projectsCollection.add([{
       id: 0,
       name: 'Item name',
       urlRoot: '/collections'
     }]);
+    projectsCollection.fetch();
   },
 
   render: function() {

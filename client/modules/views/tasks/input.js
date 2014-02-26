@@ -1,5 +1,10 @@
 'use strict';
 
+/**
+ * Module dependencies
+ */
+
+
 /*
  * Template
  */
@@ -24,24 +29,20 @@ module.exports = React.createClass({
     event.preventDefault();
 
     // Add value to Backbone collection
-    this.props.itemCollection.add({name: this.state.value});
+    this.props.itemCollection.create({name: this.state.value});
 
     // Clear state
     this.setState({value: ''});
   },
 
   render: function() {
-
-    // Initialize vars
+    
+    // Properties
     var itemCollection = this.props.itemCollection;
-    var placeholder = 'What´s on your mind?';
-    var handleChange = this.handleChange;
-    var value = this.state.value;
 
-    // Return DOM elements
     return (
       React.DOM.form(null,
-        React.DOM.input({placeholder: placeholder, value: value, onChange: handleChange}),
+        React.DOM.input({placeholder: 'What´s on your mind?', value: this.state.value, onChange: this.handleChange}),
         React.DOM.button({onClick: this.handleClick.bind(null, itemCollection)}, 'Save')
       )
     );

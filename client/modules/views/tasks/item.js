@@ -10,16 +10,21 @@ var editButton = require('./item/editButton');
 /*
  * Template
  */
+ 
 module.exports = React.createClass({
 
   
   displayName: 'items',
 
   render: function() {
+    
+    // Properties
+    var itemCollection = this.props.itemCollection;
+
     // Create a new item for each entry
     // in the item model
     var rows = [];
-    this.props.itemCollection.forEach(function(item) {
+    itemCollection.forEach(function(item) {
       rows.push(
         React.DOM.div({ className: 'item'},
           React.DOM.div(null, item.attributes.id),

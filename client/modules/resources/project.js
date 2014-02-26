@@ -14,7 +14,6 @@ var ProjectModel = Backbone.Model.extend({
   defaults: {
     id: 0,
     name: 'Item name',
-    urlRoot: '/collections',
     items: new ItemCollection()
   }
 });
@@ -25,7 +24,7 @@ var ProjectModel = Backbone.Model.extend({
 
 var ProjectCollection = Backbone.Collection.extend({
   model: ProjectModel,
-  url: '/collections'
+  sync: Backbone.localforage.sync('MyOfflineStore')
 });
 
 /**
