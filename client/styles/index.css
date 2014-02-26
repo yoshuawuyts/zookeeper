@@ -1,8 +1,0 @@
-@import "./client/styles/utilities/normalize";
-@import "./client/styles/utilities/base";
-@import "./client/styles/utilities/grid";
-
-.svgComponent {
-  height: 100px;
-  background-color: red;
-}

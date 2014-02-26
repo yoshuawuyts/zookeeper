@@ -7,10 +7,10 @@ var eslint = require('gulp-eslint');
 var rename = require('gulp-rename');
 var rework = require('gulp-rework');
 var uglify = require('gulp-uglify');
+var concat = require('gulp-concat');
 var mocha = require('gulp-mocha');
-var vars = require('rework-vars');
+var myth = require('gulp-myth');
 var csso = require('gulp-csso');
-var npm = require('rework-npm');
 var gulp = require('gulp');
 
 gulp.task('modules', function() {
@@ -43,11 +43,10 @@ gulp.task('lint', function() {
 
 gulp.task('styles', function() {
   gulp
-    .src('client/styles/index.css')
-    .pipe(rework(npm(), vars(), rework.colors(), rework.extend(), breakpoints))
-    .pipe(autoprefixer('last 2 versions', '> 1%', 'ie 10'))
+    .src(['client/vendor/reset-css/reset.css', 'client/vendor/normalize-css/normalize.css', 'client/styles/utilities/*.css'])
+    .pipe(myth())
     .pipe(csso(true))
-    .pipe(rename('styles.css'))
+    .pipe(concat('styles.css'))
     .pipe(gulp.dest('build/styles'));
 });
 

@@ -50,6 +50,8 @@
     "gulp-autoprefixer": "0.0.6",
     "gulp-eslint": "~0.1.4",
     "gulp-csso": "~0.2.6",
-    "gulp-browserify": "~0.4.6"
+    "gulp-browserify": "~0.4.6",
+    "gulp-myth": "~0.1.1",
+    "gulp-concat": "~2.1.7"
   }
 }
