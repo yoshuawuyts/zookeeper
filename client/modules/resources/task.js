@@ -5,11 +5,12 @@
  */
 
 var ItemModel = Backbone.Model.extend({
+  sync: Backbone.localforage.sync(),
   defaults: {
     id: 0,
     name: "Item name",
     text: "Input text...",
-    completed: false
+    completed: false,
   }
 });
 
@@ -19,7 +20,7 @@ var ItemModel = Backbone.Model.extend({
 
 var ItemCollection = Backbone.Collection.extend({
   model: ItemModel,
-  sync: Backbone.localforage.sync('MyOfflineStore')
+  sync: Backbone.localforage.sync('itemCollection')
 });
 
 /**
@@ -27,4 +28,3 @@ var ItemCollection = Backbone.Collection.extend({
  */
 
 exports.collection = ItemCollection;
-exports.model = ItemModel;

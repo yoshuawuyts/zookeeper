@@ -4,17 +4,18 @@
  * Module dependencies
  */
 
-var ItemCollection = require('./item').collection;
+var ItemCollection = require('./task').collection;
 
 /**
  * Model
  */
 
 var ProjectModel = Backbone.Model.extend({
+  sync: Backbone.localforage.sync(),
   defaults: {
     id: 0,
     name: 'Item name',
-    items: new ItemCollection()
+    items: new ItemCollection(),
   }
 });
 
@@ -23,8 +24,8 @@ var ProjectModel = Backbone.Model.extend({
  */
 
 var ProjectCollection = Backbone.Collection.extend({
-  model: ProjectModel,
-  sync: Backbone.localforage.sync('MyOfflineStore')
+  sync: Backbone.localforage.sync('projectCollection'),
+  model: ProjectModel
 });
 
 /**
@@ -32,4 +33,3 @@ var ProjectCollection = Backbone.Collection.extend({
  */
 
 exports.collection = ProjectCollection;
-exports.model = ProjectModel;
