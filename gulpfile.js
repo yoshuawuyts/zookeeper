@@ -1,11 +1,12 @@
 'use strict';
 
-var autoprefixer = require('gulp-autoprefixer');
-var breakpoints = require('rework-breakpoints');
+/**
+ * Module dependencies
+ */
+
 var browserify = require('gulp-browserify');
 var eslint = require('gulp-eslint');
 var rename = require('gulp-rename');
-var rework = require('gulp-rework');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var mocha = require('gulp-mocha');
@@ -13,14 +14,22 @@ var myth = require('gulp-myth');
 var csso = require('gulp-csso');
 var gulp = require('gulp');
 
+/**
+ * Compile JS
+ */
+
 gulp.task('modules', function() {
   gulp
     .src('client/modules/index.js')
     .pipe(browserify({buffer: false, debug: true}))
-//    .pipe(uglify({outSourceMap: true}))
+    //.pipe(uglify({outSourceMap: true}))
     .pipe(rename('application.js'))
     .pipe(gulp.dest('build/scripts/'));
 });
+
+/**
+ * Copy static files
+ */
 
 gulp.task('static', function() {
   gulp.src("client/vendor/localforage/dist/backbone.localforage.js").pipe(gulp.dest("build/vendor"));
@@ -31,33 +40,46 @@ gulp.task('static', function() {
   gulp.src("client/vendor/jquery/dist/jquery.min.js").pipe(gulp.dest("build/vendor"));
   gulp.src("client/vendor/react/react.min.js").pipe(gulp.dest("build/vendor"));
   gulp.src('client/images/**').pipe(gulp.dest('build/images/'));
-  gulp.src('client/fonts/**').pipe(gulp.dest('build/fonts'));
+  gulp.src('client/fonts/**').pipe(gulp.dest('build/styles/fonts'));
   gulp.src('client/index.html').pipe(gulp.dest('build/'));
 });
 
+/**
+ * Lint JS
+ */
+
 gulp.task('lint', function() {
-  gulp.src(['client/modules/*.js', 'client/modules/**/*.js', 'client/modules/**/**/*.js'])
+  gulp.src(['client/modules/*js', 'client/modules/**/*.js', 'client/modules/**/**/*.js'])
+    .pipe(eslint())
     .pipe(eslint.format('stylish'))
 })
 
+/**
+ * Compile CSS
+ */
+
 gulp.task('styles', function() {
   gulp
-    .src(['client/vendor/reset-css/reset.css', 'client/vendor/normalize-css/normalize.css', 'client/styles/utilities/*.css'])
+    .src([
+      'client/vendor/reset-css/reset.css', 
+      'client/vendor/normalize-css/normalize.css', 
+      'client/styles/utilities/*.css',
+      'client/styles/micro/*.css',
+      'client/styles/macro/*.css'
+    ])
     .pipe(myth())
     .pipe(csso(true))
     .pipe(concat('styles.css'))
     .pipe(gulp.dest('build/styles'));
 });
 
-gulp.task('tests', function() {
-  gulp
-    .src('tests/index.js')
-    .pipe(mocha({ui: 'bdd', reporter: 'dot', globals: []}));
-});
+/**
+ * Default
+ */
 
 gulp.task('default', [
+  'lint',
   'modules',
   'static',
-  'styles',
-  'tests'
+  'styles'
 ]);

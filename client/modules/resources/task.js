@@ -7,10 +7,9 @@
 var ItemModel = Backbone.Model.extend({
   sync: Backbone.localforage.sync(),
   defaults: {
-    id: 0,
     name: "Item name",
     text: "Input text...",
-    completed: false,
+    completed: false
   }
 });
 

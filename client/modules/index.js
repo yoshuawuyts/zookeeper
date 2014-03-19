@@ -4,8 +4,10 @@
  * Module dependencies
  */
 
-var projectView = require('./views/project');
-var taskView = require('./views/task');
+var ProjectCollection = require('./resources/project').collection;
+var TaskCollection = require('./resources/task').collection;
+var projectView = require('./views/projects');
+var taskView = require('./views/tasks');
 
 /**
  * Router
@@ -14,10 +16,10 @@ var taskView = require('./views/task');
 var Router = Backbone.Router.extend({
   routes: {
     '': 'home',
-    ':task': 'project'
+    ':task': 'task'
   },
-  home: function() { projectView();},
-  project: function(){ taskView();}
+  home: function() {projectView(new ProjectCollection());},
+  task: function() {taskView(new TaskCollection());}
 });
 
 var router = new Router();

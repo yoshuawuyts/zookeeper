@@ -13,9 +13,8 @@ var ItemCollection = require('./task').collection;
 var ProjectModel = Backbone.Model.extend({
   sync: Backbone.localforage.sync(),
   defaults: {
-    id: 0,
     name: 'Item name',
-    items: new ItemCollection(),
+    items: new ItemCollection()
   }
 });
 
