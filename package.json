@@ -17,7 +17,7 @@
     "url": "https://github.com/yoshuawuyts/zookeeper/issues"
   },
   "dependencies": {
-    "co-body": "0.0.1",
+    "co-body": "5.0.0",
     "debug": "~0.7.4",
     "koa": "~0.3.0",
     "koa-compress": "~1.0.2",
@@ -32,7 +32,7 @@
     "localforage": "^0.1.0"
   },
   "devDependencies": {
-     "gulp": "~3.5.2",
+    "gulp": "~3.5.2",
     "gulp-util": "~2.2.13",
     "gulp-rename": "~1.1.0",
     "gulp-mocha": "~0.4.1",
